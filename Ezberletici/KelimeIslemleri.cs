@@ -32,7 +32,7 @@ namespace Ezberletici
             GeneralConfig config = new GeneralConfig();
             ConfigProperties properties = config.ReadConfigFromFile();
             tmrWord.Interval = properties.WordInterval;
-            //tmrWord.Interval = 1000; //Hızlı Deneme
+            tmrWord.Interval = 1000; //Hızlı Deneme
         }
 
         private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Ezberletici
                 Left = Left + Width + 10,
                 Top = Top
             };
-            ayarFrm.Show();
+                ayarFrm.ShowDialog();
         }
 
         private void tmrWord_Tick(object sender, EventArgs e)
@@ -55,6 +55,7 @@ namespace Ezberletici
 
         private void başlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Close();
             ExecuteProgramConfig();
             başlatToolStripMenuItem.Enabled = false;
             tmrWord.Start();
@@ -74,11 +75,24 @@ namespace Ezberletici
             Show();
         }
 
-        private void durdurToolStripMenuItem_Click(object sender, EventArgs e)
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tmrWord.Stop();
-            başlatToolStripMenuItem.Enabled = true;
-            durdurToolStripMenuItem.Enabled = false;
+            ProgramExit();
+        }
+
+        private static void ProgramExit()
+        {
+            if (MessageBox.Show("Programdan Çıkmak İstediğinize Emin Misiniz?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.ExitThread();
+                Application.Exit();
+            }
+        }
+
+        private void menuClose_Click(object sender, EventArgs e)
+        {
+            Show();
+            ProgramExit();
         }
     }
 }

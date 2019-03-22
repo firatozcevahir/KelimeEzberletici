@@ -31,11 +31,22 @@ namespace Ezberletici
             Left = 45;
             Top = 45;
             TopMost = true;
+            ShowInTaskbar = false;
             InitializeComponent();
+        }
+        private string RandomBgColor()
+        {
+            string[] colors = {"#8fd6e8", "#bbf2a9", "#efeea0", "#edb784", "#c383f7", "#f484e3", "#95af8e", "#a59e86", "#e5a2a0", "#d49ee5"};
+            Random rnd = new Random();
+            return colors[rnd.Next(0, colors.Count())];
+
         }
 
         private void WordPopup_Load(object sender, EventArgs e)
         {
+            System.Media.SoundPlayer popupPlayer = new System.Media.SoundPlayer("sound-effect-pop-up.wav");
+            popupPlayer.Play();
+            BackColor = ColorTranslator.FromHtml(RandomBgColor());
             WordAccess wordAccess = new WordAccess();
             word = wordAccess.GetRandomWord();
             f.tmrWord.Stop();

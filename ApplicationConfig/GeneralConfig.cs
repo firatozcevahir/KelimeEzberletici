@@ -74,9 +74,4 @@ namespace ApplicationConfig
             return properties;
         }
     }
-
-    public class ConfigProperties
-    {
-        public int WordInterval { get; set; }
-    }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayarlar));
             this.trckInterval = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -47,9 +48,10 @@
             this.trckInterval.Maximum = 20;
             this.trckInterval.Minimum = 5;
             this.trckInterval.Name = "trckInterval";
-            this.trckInterval.Size = new System.Drawing.Size(282, 56);
+            this.trckInterval.Size = new System.Drawing.Size(318, 56);
             this.trckInterval.SmallChange = 5;
             this.trckInterval.TabIndex = 0;
+            this.trckInterval.TickFrequency = 5;
             this.trckInterval.Value = 10;
             this.trckInterval.Scroll += new System.EventHandler(this.trckInterval_Scroll);
             // 
@@ -66,7 +68,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(101, 316);
+            this.btnSave.Location = new System.Drawing.Point(112, 316);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 53);
@@ -88,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 77);
+            this.label3.Location = new System.Drawing.Point(98, 77);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 24);
@@ -98,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 77);
+            this.label4.Location = new System.Drawing.Point(193, 77);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 24);
@@ -108,7 +110,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(259, 77);
+            this.label5.Location = new System.Drawing.Point(288, 77);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 24);
@@ -128,7 +130,7 @@
             this.panel1.Location = new System.Drawing.Point(9, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(289, 106);
+            this.panel1.Size = new System.Drawing.Size(326, 106);
             this.panel1.TabIndex = 7;
             // 
             // Ayarlar
@@ -136,13 +138,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(308, 382);
+            this.ClientSize = new System.Drawing.Size(348, 382);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Ayarlar";
             this.Text = "Ayarlar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ayarlar_FormClosing);
             this.Load += new System.EventHandler(this.Ayarlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trckInterval)).EndInit();
             this.panel1.ResumeLayout(false);

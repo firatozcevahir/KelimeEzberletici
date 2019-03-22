@@ -16,12 +16,17 @@ namespace Ezberletici
         public Ayarlar()
         {
             InitializeComponent();
-            btnSave.Enabled = false;
         }
 
         private void trckInterval_Scroll(object sender, EventArgs e)
         {
-            btnSave.Enabled = true;
+
+
+            int value = (sender as TrackBar).Value;
+            double indexDbl = value * 1.0 / trckInterval.TickFrequency;
+            int index = Convert.ToInt32(Math.Round(indexDbl));
+            trckInterval.Value = trckInterval.TickFrequency * index;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -30,7 +35,6 @@ namespace Ezberletici
             bool ConfigResult = config.SetConfig(trckInterval.Value);
             if (ConfigResult)
             {
-
                 MessageBox.Show("Ayarlar Başarıyla Güncellendi");
             }
             else
@@ -42,6 +46,11 @@ namespace Ezberletici
             GeneralConfig config = new GeneralConfig();
             ConfigProperties properties = config.ReadConfigFromFile();
             trckInterval.Value = properties.WordInterval / 60000;
+        }
+
+        private void Ayarlar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // KelimeIslemleri f = new KelimeIslemleri();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordPopup));
             this.lblWord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,12 +37,12 @@
             // lblWord
             // 
             this.lblWord.AutoSize = true;
-            this.lblWord.BackColor = System.Drawing.Color.Transparent;
+            this.lblWord.BackColor = System.Drawing.Color.White;
             this.lblWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblWord.Location = new System.Drawing.Point(-25, 31);
+            this.lblWord.Location = new System.Drawing.Point(-4, 73);
             this.lblWord.Name = "lblWord";
-            this.lblWord.Padding = new System.Windows.Forms.Padding(35);
-            this.lblWord.Size = new System.Drawing.Size(397, 106);
+            this.lblWord.Padding = new System.Windows.Forms.Padding(10, 0, 300, 0);
+            this.lblWord.Size = new System.Drawing.Size(637, 36);
             this.lblWord.TabIndex = 0;
             this.lblWord.Text = "-----PLACEHOLDER----";
             this.lblWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -51,9 +52,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 9);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Padding = new System.Windows.Forms.Padding(10, 5, 300, 5);
+            this.label1.Size = new System.Drawing.Size(422, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Kelime Hatırlatıcı";
             // 
@@ -71,12 +74,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(347, 170);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblWord);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WordPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
