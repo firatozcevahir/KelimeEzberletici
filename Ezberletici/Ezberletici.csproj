@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordPopup.Designer.cs">
+      <DependentUpon>WordPopup.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ayarlar.resx">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WordPopup.resx">
+      <DependentUpon>WordPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +97,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationConfig\ApplicationConfig.csproj">
+      <Project>{ec6e908f-9336-431c-9d65-ac7ae024839c}</Project>
+      <Name>ApplicationConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordOperations\WordOperations.csproj">
+      <Project>{ec21139e-8629-455c-8531-09fb89fc61d2}</Project>
+      <Name>WordOperations</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
