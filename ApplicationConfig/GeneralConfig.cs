@@ -10,14 +10,16 @@ namespace ApplicationConfig
     public class GeneralConfig
     {
         int Interval = 0;
+        int RemainTime = 0;
         List<string> configList;
         List<string> configListValues;
         readonly string ConfigFileName = "GeneralConfig.cfg";
 
-        public bool SetConfig(int IntervalValue)
+        public bool SetConfig(int IntervalValue,int RemainingValue)
         {
             Interval = IntervalValue * 60000;
-            string result = $"WORD_INTERVAL={Interval}";
+            RemainTime = RemainingValue * 1000;
+            string result = $"WORD_INTERVAL={Interval}\rPOPUP_REMAINING_TIME={RemainTime}";
 
             return WriteConfigToFile(result);
         }
@@ -71,6 +73,7 @@ namespace ApplicationConfig
             }
 
             properties.WordInterval = int.Parse(configListValues[0]);
+            properties.PopUpRemainingTime = int.Parse(configListValues[1]);
             return properties;
         }
     }

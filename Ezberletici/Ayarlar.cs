@@ -20,19 +20,21 @@ namespace Ezberletici
 
         private void trckInterval_Scroll(object sender, EventArgs e)
         {
+            trckInterval.Value = trckInterval.TickFrequency * TrackBarInterval(sender);
+        }
 
-
+        private int TrackBarInterval(object sender)
+        {
             int value = (sender as TrackBar).Value;
             double indexDbl = value * 1.0 / trckInterval.TickFrequency;
             int index = Convert.ToInt32(Math.Round(indexDbl));
-            trckInterval.Value = trckInterval.TickFrequency * index;
-
+            return index;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             GeneralConfig config = new GeneralConfig();
-            bool ConfigResult = config.SetConfig(trckInterval.Value);
+            bool ConfigResult = config.SetConfig(trckInterval.Value,trckPopupRemain.Value);
             if (ConfigResult)
             {
                 MessageBox.Show("Ayarlar Başarıyla Güncellendi");
@@ -51,6 +53,11 @@ namespace Ezberletici
         private void Ayarlar_FormClosing(object sender, FormClosingEventArgs e)
         {
            // KelimeIslemleri f = new KelimeIslemleri();
+        }
+
+        private void trckPopupRemain_Scroll(object sender, EventArgs e)
+        {
+            trckPopupRemain.Value = trckInterval.TickFrequency * TrackBarInterval(sender);
         }
     }
 }

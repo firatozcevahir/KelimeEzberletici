@@ -9,5 +9,6 @@ namespace ApplicationConfig
     public class ConfigProperties
     {
         public int WordInterval { get; set; }
+        public int PopUpRemainingTime { get; set; }
     }
 }

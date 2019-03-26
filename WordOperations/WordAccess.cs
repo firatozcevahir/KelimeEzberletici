@@ -38,7 +38,6 @@ namespace WordOperations
         }
         public Words GetRandomWord()
         {
-
             Random rnd = new Random();
             Words word = new Words();
 

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordPopup));
             this.lblWord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tmrPopup = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblWord
@@ -70,6 +72,11 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "___________________________________________-";
             // 
+            // tmrPopup
+            // 
+            this.tmrPopup.Interval = 1000;
+            this.tmrPopup.Tick += new System.EventHandler(this.tmrPopup_Tick);
+            // 
             // WordPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -89,6 +96,11 @@
             this.Load += new System.EventHandler(this.WordPopup_Load);
             this.Click += new System.EventHandler(this.WordPopup_Click);
             this.DoubleClick += new System.EventHandler(this.WordPopup_DoubleClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WordPopup_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.WordPopup_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.WordPopup_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WordPopup_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.WordPopup_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +111,6 @@
         private System.Windows.Forms.Label lblWord;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer tmrPopup;
     }
 }

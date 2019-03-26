@@ -32,7 +32,7 @@ namespace Ezberletici
             GeneralConfig config = new GeneralConfig();
             ConfigProperties properties = config.ReadConfigFromFile();
             tmrWord.Interval = properties.WordInterval;
-            tmrWord.Interval = 1000; //Hızlı Deneme
+            //tmrWord.Interval = 1000; //Hızlı Deneme
         }
 
         private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +71,6 @@ namespace Ezberletici
         private void ntfyTrayIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ntfyTrayIcon.Visible = false;
-            ntfyTrayIcon.Icon = null;
             Show();
         }
 

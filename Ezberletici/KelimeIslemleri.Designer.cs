@@ -34,6 +34,7 @@
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.başlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayarlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrWord = new System.Windows.Forms.Timer(this.components);
             this.ntfyTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,7 +44,6 @@
             this.WordID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lang_EN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lang_TR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.mainMenu.SuspendLayout();
@@ -76,7 +76,7 @@
             // başlatToolStripMenuItem
             // 
             this.başlatToolStripMenuItem.Name = "başlatToolStripMenuItem";
-            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
             this.başlatToolStripMenuItem.Text = "Başlat";
             this.başlatToolStripMenuItem.Click += new System.EventHandler(this.başlatToolStripMenuItem_Click);
             // 
@@ -86,6 +86,13 @@
             this.ayarlarToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.ayarlarToolStripMenuItem.Text = "Ayarlar";
             this.ayarlarToolStripMenuItem.Click += new System.EventHandler(this.ayarlarToolStripMenuItem_Click);
+            // 
+            // çıkışToolStripMenuItem
+            // 
+            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.çıkışToolStripMenuItem.Text = "Çıkış";
+            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
             // tmrWord
             // 
@@ -108,12 +115,12 @@
             this.cntxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuClose});
             this.cntxMenu.Name = "cntxMenu";
-            this.cntxMenu.Size = new System.Drawing.Size(211, 56);
+            this.cntxMenu.Size = new System.Drawing.Size(109, 28);
             // 
             // menuClose
             // 
             this.menuClose.Name = "menuClose";
-            this.menuClose.Size = new System.Drawing.Size(210, 24);
+            this.menuClose.Size = new System.Drawing.Size(108, 24);
             this.menuClose.Text = "Çıkış";
             this.menuClose.Click += new System.EventHandler(this.menuClose_Click);
             // 
@@ -163,13 +170,6 @@
             this.Lang_TR.Name = "Lang_TR";
             this.Lang_TR.ReadOnly = true;
             // 
-            // çıkışToolStripMenuItem
-            // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.çıkışToolStripMenuItem.Text = "Çıkış";
-            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -208,7 +208,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "KelimeIslemleri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kelime Ezberletici";
+            this.Text = "Kelilme Hatırlatıcı";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KelimeIslemleri_FormClosing);
             this.Load += new System.EventHandler(this.KelimeIslemleri_Load);
             this.mainMenu.ResumeLayout(false);
