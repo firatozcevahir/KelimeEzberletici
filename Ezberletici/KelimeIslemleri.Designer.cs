@@ -223,7 +223,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem ayarlarToolStripMenuItem;
         public System.Windows.Forms.Timer tmrWord;
         private System.Windows.Forms.NotifyIcon ntfyTrayIcon;
         private System.Windows.Forms.Label lblWords;

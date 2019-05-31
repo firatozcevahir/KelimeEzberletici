@@ -52,7 +52,6 @@ namespace Ezberletici
 
         private void Ayarlar_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // KelimeIslemleri f = new KelimeIslemleri();
         }
 
         private void trckPopupRemain_Scroll(object sender, EventArgs e)

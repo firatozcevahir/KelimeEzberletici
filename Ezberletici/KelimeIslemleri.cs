@@ -37,13 +37,20 @@ namespace Ezberletici
 
         private void ayarlarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ayarlarToolStripMenuItem.Enabled = false;
             Ayarlar ayarFrm = new Ayarlar
             {
                 StartPosition = FormStartPosition.Manual,
                 Left = Left + Width + 10,
                 Top = Top
             };
-                ayarFrm.ShowDialog();
+            ayarFrm.ShowDialog();
+            if(ayarFrm.DialogResult == DialogResult.Cancel)
+            {
+                ayarlarToolStripMenuItem.Enabled = true;
+            }
+
+
         }
 
         private void tmrWord_Tick(object sender, EventArgs e)
